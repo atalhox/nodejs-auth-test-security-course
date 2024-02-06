@@ -64,4 +64,4 @@ This project is licensed under the MIT License - see the `LICENSE` file for deta
 
 ## Contact
 
-For any queries regarding the course, please contact contato@felipebrum.com.
+For any queries regarding the course, please contact <contato@felipebrum.com>.
