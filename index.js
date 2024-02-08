@@ -1,15 +1,52 @@
-const somaHorasExtras = (salario, valorHorasExtras) => salario + valorHorasExtras;
+const addOvertime = (salary, overtimeValue) => salary + overtimeValue;
 
-const calculaDescontos = (salario, descontos) => salario - descontos;
+const calculateDeductions = (salary, deductions) => salary - deductions;
 
-const teste = (titulo, esperado, retornado) => {
-  if (esperado === retornado) {
-    console.log(`${titulo} passou`);
-  } else {
-    console.error(`${titulo} não passou`);
+/**
+ * Generates an assertion that verifies that a given value is an expected value.
+ *
+ * @param {any} value - The value to be verified for strict equality.
+ * @return {Object} assertions - A result of verifying strict equality.
+ */
+const verifyIf = (value) => {
+  const assertions = {
+    isStrictEqual(expected) {
+      if (value !== expected) {
+        throw new Error(
+          `expected ${value} to be strictly equal to ${expected}`, // Correct the positioning here
+        );
+      }
+    },
+  };
+  return assertions;
+};
+
+/**
+ * Compares the expected and returned values and logs whether the test passed or not.
+ *
+ * @param {any} title - The title of the test
+ * @param {any} testFunction - The testFunction
+ * @return {void}
+ */
+const test = (title, testFunction) => {
+  try {
+    testFunction();
+    console.log(`✅ ${title} passed!`);
+  } catch {
+    console.log(`❌ ${title} failed!`);
   }
 };
 
-teste('somaHorasExtras', 2500, somaHorasExtras(2000, 500));
+test('addOvertime', () => {
+  const wanted = 2500;
+  const actual = addOvertime(2000, 500);
 
-teste('calculaDesconto', 2200, calculaDescontos(2500, 300));
+  verifyIf(wanted).isStrictEqual(actual);
+});
+
+test('calculateDeductions', () => {
+  const wanted = 2000;
+  const actual = calculateDeductions(2500, 500);
+
+  verifyIf(wanted).isStrictEqual(actual);
+});
