@@ -1,3 +1,5 @@
+import assert from 'node:assert/strict';
+
 const addOvertime = (salary, overtimeValue) => salary + overtimeValue;
 
 const calculateDeductions = (salary, deductions) => salary - deductions;
@@ -11,11 +13,7 @@ const calculateDeductions = (salary, deductions) => salary - deductions;
 const verifyIf = (value) => {
   const assertions = {
     isStrictEqual(expected) {
-      if (value !== expected) {
-        throw new Error(
-          `expected ${value} to be strictly equal to ${expected}`, // Correct the positioning here
-        );
-      }
+      assert.strictEqual(value, expected);
     },
   };
   return assertions;
