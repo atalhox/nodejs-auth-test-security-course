@@ -12,47 +12,6 @@ In this course, I worked on:
 - [] Authentication and JWT security.
 - [] Application Deploy.
 
-## Prerequisites
-
-- Node.js (version 18.15x or higher)
-
-## Getting Started
-
-1. **Clone the Repository**
-
-    ```bash
-    git clone https://github.com/atalhox/nodejs-auth-test-security-course.git
-    cd nodejs-auth-test-security-course
-    ```
-
-2. **Install Dependencies**
-
-    Navigate to the project directory and run:
-
-    ```bash
-    npm install
-    ```
-
-3. **Environment Variables**
-
-    Make sure to create a `.env` file in the root directory with all the necessary environment variables. An example `.env.example` file is provided for reference.
-
-    ```bash
-    npm install
-    ```
-
-4. **Running the Application**
-
-    Start the application with the following command:
-
-    ```bash
-    npm start
-    ```
-
-## Course Structure
-
-- [X] TO-DO
-
 ## License
 
 This project is licensed under the MIT License - see the `LICENSE` file for details.
